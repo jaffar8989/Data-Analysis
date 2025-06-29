@@ -1,4 +1,3 @@
-```
 # Introduction to Python Assignment
 
 ## Overview
