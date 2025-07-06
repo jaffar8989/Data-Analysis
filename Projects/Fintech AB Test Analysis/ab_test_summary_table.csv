@@ -1,0 +1,18 @@
+Metric,Value
+Sample Size (Control),"5,000"
+Sample Size (Treatment),"5,000"
+Control Conversion Rate,11.9%
+Treatment Conversion Rate,18.4%
+Absolute Lift,6.5%
+Relative Lift,54.3%
+P-value,< 0.001
+Statistical Significance,YES ✅
+Effect Size (Cohen's h),0.182
+Effect Magnitude,Small
+Achieved Power,100.0%
+Control Avg Loan,$345.41
+Treatment Avg Loan,$522.49
+Loan Amount P-value,< 0.001
+Revenue Lift (30-day),"$13,062.64"
+Net Revenue Lift,"-$16,314.41"
+Annual Revenue Lift,"$156,752"

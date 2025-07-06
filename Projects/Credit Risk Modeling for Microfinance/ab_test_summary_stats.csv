@@ -1,0 +1,11 @@
+metric,value
+control_conversion_rate,0.1242
+treatment_conversion_rate,0.1782
+conversion_lift,0.05399999999999999
+chi_square_statistic,56.38289848351112
+p_value,5.964689581645979e-14
+effect_size,0.15129170705578665
+control_avg_loan,349.3841284291568
+treatment_avg_loan,515.1081629903442
+control_default_rate,0.0821256038647343
+treatment_default_rate,0.11447811447811448
