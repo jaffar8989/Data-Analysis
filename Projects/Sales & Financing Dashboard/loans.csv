@@ -1,0 +1,5 @@
+loan_id,region,loan_type,approved_amount,repayment_period,delayed_payments,applicant_age,applicant_gender
+1,North,Home,250000,120,3,35,Male
+2,South,Auto,15000,36,0,29,Female
+3,East,Personal,5000,24,1,42,Male
+4,West,Home,300000,180,5,50,Female

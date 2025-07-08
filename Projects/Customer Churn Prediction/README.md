@@ -104,4 +104,4 @@ A synthetic telecom dataset is generated with the following columns:
 ---
 
 **Author:** Jaffar Hasan  
-**Date:** July 3,
+**Date:** July 3, 2025
