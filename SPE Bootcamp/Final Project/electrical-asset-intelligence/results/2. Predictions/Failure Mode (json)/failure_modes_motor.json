@@ -1,0 +1,172 @@
+{
+  "391": {
+    "failure_mode": "Bearing/Mechanical Failure",
+    "confidence": 0.8,
+    "risk_score": 0.8794410834267548,
+    "risk_rank": 1,
+    "top_features": [
+      {
+        "name": "vibration_mm_s",
+        "value": 9.46721904658541,
+        "importance": 0.9972165322652167
+      },
+      {
+        "name": "vibration_7d_avg",
+        "value": 8.246281522427887,
+        "importance": 0.0027834677347831614
+      },
+      {
+        "name": "voltage_v",
+        "value": 430.6887426683,
+        "importance": 3.556787167577386e-17
+      },
+      {
+        "name": "day_of_year",
+        "value": 26,
+        "importance": 3.3364145222847105e-17
+      },
+      {
+        "name": "temp_rate",
+        "value": 4.2445010408632555,
+        "importance": 2.8587317174005267e-17
+      }
+    ],
+    "asset_id": "motor_391"
+  },
+  "394": {
+    "failure_mode": "Bearing/Mechanical Failure",
+    "confidence": 0.8,
+    "risk_score": 0.8467502576269775,
+    "risk_rank": 2,
+    "top_features": [
+      {
+        "name": "vibration_mm_s",
+        "value": 9.31677836114043,
+        "importance": 0.9972165322652167
+      },
+      {
+        "name": "vibration_7d_avg",
+        "value": 8.792006373667444,
+        "importance": 0.0027834677347831614
+      },
+      {
+        "name": "voltage_v",
+        "value": 418.2795038826488,
+        "importance": 3.556787167577386e-17
+      },
+      {
+        "name": "day_of_year",
+        "value": 29,
+        "importance": 3.3364145222847105e-17
+      },
+      {
+        "name": "temp_rate",
+        "value": -5.61239426656482,
+        "importance": 2.8587317174005267e-17
+      }
+    ],
+    "asset_id": "motor_394"
+  },
+  "398": {
+    "failure_mode": "Bearing/Mechanical Failure",
+    "confidence": 0.8,
+    "risk_score": 0.8414501750884884,
+    "risk_rank": 3,
+    "top_features": [
+      {
+        "name": "vibration_mm_s",
+        "value": 9.740204762613844,
+        "importance": 0.9972165322652167
+      },
+      {
+        "name": "vibration_7d_avg",
+        "value": 9.141540225758188,
+        "importance": 0.0027834677347831614
+      },
+      {
+        "name": "voltage_v",
+        "value": 420.9445668573732,
+        "importance": 3.556787167577386e-17
+      },
+      {
+        "name": "day_of_year",
+        "value": 33,
+        "importance": 3.3364145222847105e-17
+      },
+      {
+        "name": "temp_rate",
+        "value": -0.25237168566178525,
+        "importance": 2.8587317174005267e-17
+      }
+    ],
+    "asset_id": "motor_398"
+  },
+  "397": {
+    "failure_mode": "Bearing/Mechanical Failure",
+    "confidence": 0.8,
+    "risk_score": 0.8413825926594843,
+    "risk_rank": 4,
+    "top_features": [
+      {
+        "name": "vibration_mm_s",
+        "value": 9.516542710048649,
+        "importance": 0.9972165322652167
+      },
+      {
+        "name": "vibration_7d_avg",
+        "value": 9.102542266325555,
+        "importance": 0.0027834677347831614
+      },
+      {
+        "name": "voltage_v",
+        "value": 417.5808914355748,
+        "importance": 3.556787167577386e-17
+      },
+      {
+        "name": "day_of_year",
+        "value": 32,
+        "importance": 3.3364145222847105e-17
+      },
+      {
+        "name": "temp_rate",
+        "value": -2.4560125035107205,
+        "importance": 2.8587317174005267e-17
+      }
+    ],
+    "asset_id": "motor_397"
+  },
+  "395": {
+    "failure_mode": "Bearing/Mechanical Failure",
+    "confidence": 0.8,
+    "risk_score": 0.8343993938639717,
+    "risk_rank": 5,
+    "top_features": [
+      {
+        "name": "vibration_mm_s",
+        "value": 8.905740773455557,
+        "importance": 0.9972165322652167
+      },
+      {
+        "name": "vibration_7d_avg",
+        "value": 8.822251445625088,
+        "importance": 0.0027834677347831614
+      },
+      {
+        "name": "voltage_v",
+        "value": 419.7376323106143,
+        "importance": 3.556787167577386e-17
+      },
+      {
+        "name": "day_of_year",
+        "value": 30,
+        "importance": 3.3364145222847105e-17
+      },
+      {
+        "name": "temp_rate",
+        "value": 2.2788052178521667,
+        "importance": 2.8587317174005267e-17
+      }
+    ],
+    "asset_id": "motor_395"
+  }
+}

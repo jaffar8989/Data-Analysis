@@ -1,0 +1,28 @@
+Prescriptive Maintenance Recommendations for Transformer
+Generated: 2025-08-18 19:38:56.810189
+
+Asset #538 - Health: Critical
+Failure Mode: Insulation Degradation (Confidence: 0.85)
+  1. Perform partial discharge mitigation | urgency: Medium | cost: $1,200 | cb: 8.750
+  2. Replace phase insulation | urgency: Immediate | cost: $3,500 | cb: 3.857
+
+Asset #526 - Health: Critical
+Failure Mode: Insulation Degradation (Confidence: 0.85)
+  1. Perform partial discharge mitigation | urgency: Medium | cost: $1,200 | cb: 8.750
+  2. Replace phase insulation | urgency: Immediate | cost: $3,500 | cb: 3.857
+
+Asset #525 - Health: Critical
+Failure Mode: Insulation Degradation (Confidence: 0.85)
+  1. Perform partial discharge mitigation | urgency: Medium | cost: $1,200 | cb: 8.750
+  2. Replace phase insulation | urgency: Immediate | cost: $3,500 | cb: 3.857
+
+Asset #544 - Health: Critical
+Failure Mode: Insulation Degradation (Confidence: 0.85)
+  1. Perform partial discharge mitigation | urgency: Medium | cost: $1,200 | cb: 8.750
+  2. Replace phase insulation | urgency: Immediate | cost: $3,500 | cb: 3.857
+
+Asset #537 - Health: Critical
+Failure Mode: Insulation Degradation (Confidence: 0.85)
+  1. Perform partial discharge mitigation | urgency: Medium | cost: $1,200 | cb: 8.750
+  2. Replace phase insulation | urgency: Immediate | cost: $3,500 | cb: 3.857
+

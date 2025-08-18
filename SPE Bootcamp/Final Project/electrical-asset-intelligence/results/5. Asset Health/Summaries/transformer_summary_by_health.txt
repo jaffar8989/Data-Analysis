@@ -1,0 +1,50 @@
+Transformer summary (rows=1000)
+Class distribution:
+  Healthy: 962 (96.20%)
+  Critical: 35 (3.50%)
+  Warning: 3 (0.30%)
+
+--- Healthy (n=962) ---
+Date range: 2024-01-01 00:00:00 -> 2026-09-26 00:00:00
+                            count         mean         std          min          25%          50%          75%          max
+oil_temp_c                  962.0    64.985730    5.022362    48.793663    61.750813    64.759942    68.318493    83.051667
+winding_temp_c              962.0    70.195634    6.283024    52.872240    65.946546    70.293467    74.092072   103.724759
+load_percent                962.0    75.287181    9.955983    44.923677    69.006118    75.591013    81.773419   100.000000
+insulation_resistance_mohm  962.0  1476.117308  105.077751  1016.705543  1433.319135  1488.835461  1541.361233  1743.231973
+partial_discharge_pc        962.0    52.802649   13.438624    20.000000    44.359542    51.520564    59.575555   119.516831
+maintenance_performed       962.0     0.023909    0.152844     0.000000     0.000000     0.000000     0.000000     1.000000
+Representative most-abnormal rows (top 3):
+      date health_status  oil_temp_c  winding_temp_c  load_percent  insulation_resistance_mohm  partial_discharge_pc  maintenance_performed
+2024-10-24       Healthy   67.962635       74.670166     69.488143                 1019.992274             98.466255                      0
+2024-10-22       Healthy   71.312921       66.688851    100.000000                 1042.242223             99.345513                      0
+2024-10-26       Healthy   72.387650       63.149865     73.063405                 1016.705543             80.834634                      0
+
+--- Critical (n=35) ---
+Date range: 2025-05-29 00:00:00 -> 2025-07-03 00:00:00
+                            count         mean        std          min          25%          50%          75%          max
+oil_temp_c                   35.0   111.416481  10.236420    92.167393   102.955278   117.203469   120.000000   120.000000
+winding_temp_c               35.0   120.830628   7.434105    95.048585   119.168117   125.000000   125.000000   125.000000
+load_percent                 35.0    75.396121  10.868672    53.999735    66.984047    77.965755    82.624253    94.541574
+insulation_resistance_mohm   35.0  1519.722621  60.447204  1414.673575  1476.105627  1518.099145  1561.396159  1626.376071
+partial_discharge_pc         35.0    49.533259   8.707418    34.351972    43.031778    50.435147    55.368365    70.122704
+maintenance_performed        35.0     0.000000   0.000000     0.000000     0.000000     0.000000     0.000000     0.000000
+Representative most-abnormal rows (top 3):
+      date health_status  oil_temp_c  winding_temp_c  load_percent  insulation_resistance_mohm  partial_discharge_pc  maintenance_performed
+2025-05-31      Critical   95.085331       109.64925     81.515220                 1414.673575             47.985085                      0
+2025-06-24      Critical  120.000000       125.00000     87.308745                 1626.376071             55.628809                      0
+2025-06-28      Critical  120.000000       125.00000     92.554757                 1617.976479             45.341944                      0
+
+--- Warning (n=3) ---
+Date range: 2024-10-21 00:00:00 -> 2025-05-28 00:00:00
+                            count         mean         std         min          25%          50%          75%          max
+oil_temp_c                    3.0    80.310461   12.356385   66.123424    76.106769    86.090114    87.403979    88.717844
+winding_temp_c                3.0    91.754982   14.050722   75.595545    87.087180    98.578815    99.834700   101.090585
+load_percent                  3.0    60.696892    8.106720   52.531107    56.673725    60.816343    64.779785    68.743227
+insulation_resistance_mohm    3.0  1279.244795  258.649195  982.180445  1191.618453  1401.056460  1427.776969  1454.497478
+partial_discharge_pc          3.0    60.608822   18.419943   47.970194    50.041515    52.112837    66.928137    81.743437
+maintenance_performed         3.0     0.000000    0.000000    0.000000     0.000000     0.000000     0.000000     0.000000
+Representative most-abnormal rows (top 3):
+      date health_status  oil_temp_c  winding_temp_c  load_percent  insulation_resistance_mohm  partial_discharge_pc  maintenance_performed
+2024-10-21       Warning   66.123424       75.595545     60.816343                  982.180445             81.743437                      0
+2025-05-28       Warning   86.090114      101.090585     52.531107                 1454.497478             52.112837                      0
+2025-05-26       Warning   88.717844       98.578815     68.743227                 1401.056460             47.970194                      0

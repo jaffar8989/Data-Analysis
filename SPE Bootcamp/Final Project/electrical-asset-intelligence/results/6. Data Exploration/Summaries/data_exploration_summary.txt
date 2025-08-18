@@ -1,0 +1,151 @@
+Transformer Statistics by Health Status:
+               date                                                      \
+              count                           mean                  min   
+health_status                                                             
+Critical         35  2025-06-15 23:18:51.428571392  2025-05-29 00:00:00   
+Healthy         962  2025-05-13 12:08:58.877338880  2024-01-01 00:00:00   
+Warning           3            2025-03-15 08:00:00  2024-10-21 00:00:00   
+
+                                                                              \
+                               25%                  50%                  75%   
+health_status                                                                  
+Critical       2025-06-07 12:00:00  2025-06-16 00:00:00  2025-06-24 12:00:00   
+Healthy        2024-08-28 06:00:00  2025-04-26 12:00:00  2026-01-28 18:00:00   
+Warning        2025-02-06 12:00:00  2025-05-26 00:00:00  2025-05-27 00:00:00   
+
+                                        oil_temp_c              ...  \
+                               max  std      count        mean  ...   
+health_status                                                   ...   
+Critical       2025-07-03 00:00:00  NaN       35.0  111.416481  ...   
+Healthy        2026-09-26 00:00:00  NaN      962.0   64.985730  ...   
+Warning        2025-05-28 00:00:00  NaN        3.0   80.310461  ...   
+
+              partial_discharge_pc            maintenance_performed            \
+                               max        std                 count      mean   
+health_status                                                                   
+Critical                 70.122704   8.707418                  35.0  0.000000   
+Healthy                 119.516831  13.438624                 962.0  0.023909   
+Warning                  81.743437  18.419943                   3.0  0.000000   
+
+                                                  
+               min  25%  50%  75%  max       std  
+health_status                                     
+Critical       0.0  0.0  0.0  0.0  0.0  0.000000  
+Healthy        0.0  0.0  0.0  0.0  1.0  0.152844  
+Warning        0.0  0.0  0.0  0.0  0.0  0.000000  
+
+[3 rows x 56 columns]
+
+Motor Statistics by Health Status:
+               date                                                      \
+              count                           mean                  min   
+health_status                                                             
+Critical         64            2025-01-01 20:15:00  2024-11-19 00:00:00   
+Healthy         916  2025-05-26 08:54:29.868995584  2024-01-01 00:00:00   
+Warning          20            2025-01-15 07:12:00  2024-11-10 00:00:00   
+
+                                                                              \
+                               25%                  50%                  75%   
+health_status                                                                  
+Critical       2024-12-17 18:00:00  2025-01-02 12:00:00  2025-01-18 06:00:00   
+Healthy        2024-08-16 18:00:00  2025-06-23 12:00:00  2026-02-08 06:00:00   
+Warning        2024-11-20 18:00:00  2024-11-25 12:00:00  2024-12-04 00:00:00   
+
+                                        vibration_mm_s            ...  \
+                               max  std          count      mean  ...   
+health_status                                                     ...   
+Critical       2025-02-03 00:00:00  NaN           64.0  6.865665  ...   
+Healthy        2026-09-26 00:00:00  NaN          916.0  1.514436  ...   
+Warning        2026-09-01 00:00:00  NaN           20.0  3.673829  ...   
+
+              temperature_c           runtime_hours                       \
+                        max       std         count         mean     min   
+health_status                                                              
+Critical          86.121717  5.588362          64.0  6043.718750  5328.0   
+Healthy           79.263657  4.958260         916.0  8343.947598    16.0   
+Warning           77.297818  5.835979          20.0  6251.500000  5157.0   
+
+                                                                
+                   25%     50%       75%      max          std  
+health_status                                                   
+Critical       5799.50  6042.0   6314.50   6556.0   314.551405  
+Healthy        3747.00  8795.0  12544.50  16273.0  4857.527292  
+Warning        5362.75  5431.5   5574.25  15860.0  2472.134609  
+
+[3 rows x 56 columns]
+
+Capacitor Bank Statistics by Health Status:
+               date                                                      \
+              count                           mean                  min   
+health_status                                                             
+Critical         19  2025-03-15 08:50:31.578947328  2025-03-02 00:00:00   
+Healthy         969  2025-05-16 13:10:35.294117632  2024-01-01 00:00:00   
+Warning          12            2025-03-05 06:00:00  2025-02-17 00:00:00   
+
+                                                                              \
+                               25%                  50%                  75%   
+health_status                                                                  
+Critical       2025-03-11 12:00:00  2025-03-16 00:00:00  2025-03-20 12:00:00   
+Healthy        2024-08-30 00:00:00  2025-05-30 00:00:00  2026-01-27 00:00:00   
+Warning        2025-02-25 00:00:00  2025-03-02 00:00:00  2025-03-07 06:00:00   
+
+                                        voltage_kv             ...  \
+                               max  std      count       mean  ...   
+health_status                                                  ...   
+Critical       2025-03-25 00:00:00  NaN       19.0  11.153394  ...   
+Healthy        2026-09-26 00:00:00  NaN      969.0  11.004277  ...   
+Warning        2025-04-27 00:00:00  NaN       12.0  10.874201  ...   
+
+              temperature_c           discharge_time_s                       \
+                        max       std            count       mean       min   
+health_status                                                                 
+Critical          52.910110  2.620863             19.0  10.041835  9.018687   
+Healthy           55.547283  3.012747            969.0  10.059916  8.575729   
+Warning           52.277546  4.114911             12.0  10.278650  9.616672   
+
+                                                                    
+                    25%        50%        75%        max       std  
+health_status                                                       
+Critical       9.647390  10.155654  10.371740  10.879310  0.522788  
+Healthy        9.711040  10.034036  10.375967  12.680058  0.559691  
+Warning        9.949304  10.296441  10.503780  11.044221  0.435843  
+
+[3 rows x 56 columns]
+
+UPS Statistics by Health Status:
+               date                                                      \
+              count                           mean                  min   
+health_status                                                             
+Critical          2            2025-07-22 00:00:00  2024-10-24 00:00:00   
+Healthy         940  2025-05-09 13:41:06.382978816  2024-01-01 00:00:00   
+Warning          58  2025-07-31 00:49:39.310344704  2024-04-25 00:00:00   
+
+                                                                              \
+                               25%                  50%                  75%   
+health_status                                                                  
+Critical       2025-03-08 12:00:00  2025-07-22 00:00:00  2025-12-04 12:00:00   
+Healthy        2024-08-27 18:00:00  2025-05-07 12:00:00  2026-01-14 06:00:00   
+Warning        2024-10-19 06:00:00  2025-09-08 00:00:00  2026-04-03 06:00:00   
+
+                                        voltage_per_cell_v            ...  \
+                               max  std              count      mean  ...   
+health_status                                                         ...   
+Critical       2026-04-19 00:00:00  NaN                2.0  2.087418  ...   
+Healthy        2026-09-26 00:00:00  NaN              940.0  2.100449  ...   
+Warning        2026-09-25 00:00:00  NaN               58.0  2.027097  ...   
+
+              backup_time_min           charger_efficiency_percent             \
+                          max       std                      count       mean   
+health_status                                                                   
+Critical            14.961838  1.407227                        2.0  92.916882   
+Healthy             40.000000  4.449929                      940.0  91.997177   
+Warning             39.617229  7.133846                       58.0  91.315730   
+
+                                                                                
+                     min        25%        50%        75%        max       std  
+health_status                                                                   
+Critical       92.571179  92.744031  92.916882  93.089733  93.262584  0.488897  
+Healthy        86.630184  91.353841  91.968751  92.690822  95.000000  1.045542  
+Warning        86.270024  90.843156  91.792103  92.403082  94.046862  1.727696  
+
+[3 rows x 48 columns]

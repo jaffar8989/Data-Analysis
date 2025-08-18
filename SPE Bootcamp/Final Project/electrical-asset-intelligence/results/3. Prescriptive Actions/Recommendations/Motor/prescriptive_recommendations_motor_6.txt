@@ -1,0 +1,28 @@
+Prescriptive Maintenance Recommendations for Motor
+Generated: 2025-08-18 19:40:35.945907
+
+Asset #391 - Health: Critical
+Failure Mode: Bearing/Mechanical Failure (Confidence: 0.80)
+  1. Perform vibration analysis and realignment | urgency: Medium | cost: $950 | cb: 9.474
+  2. Replace motor bearings | urgency: Immediate | cost: $2,800 | cb: 3.643
+
+Asset #394 - Health: Critical
+Failure Mode: Bearing/Mechanical Failure (Confidence: 0.80)
+  1. Perform vibration analysis and realignment | urgency: Medium | cost: $950 | cb: 9.474
+  2. Replace motor bearings | urgency: Immediate | cost: $2,800 | cb: 3.643
+
+Asset #398 - Health: Critical
+Failure Mode: Bearing/Mechanical Failure (Confidence: 0.80)
+  1. Perform vibration analysis and realignment | urgency: Medium | cost: $950 | cb: 9.474
+  2. Replace motor bearings | urgency: Immediate | cost: $2,800 | cb: 3.643
+
+Asset #397 - Health: Critical
+Failure Mode: Bearing/Mechanical Failure (Confidence: 0.80)
+  1. Perform vibration analysis and realignment | urgency: Medium | cost: $950 | cb: 9.474
+  2. Replace motor bearings | urgency: Immediate | cost: $2,800 | cb: 3.643
+
+Asset #395 - Health: Critical
+Failure Mode: Bearing/Mechanical Failure (Confidence: 0.80)
+  1. Perform vibration analysis and realignment | urgency: Medium | cost: $950 | cb: 9.474
+  2. Replace motor bearings | urgency: Immediate | cost: $2,800 | cb: 3.643
+

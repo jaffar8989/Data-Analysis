@@ -1,0 +1,46 @@
+UPS summary (rows=1000)
+Class distribution:
+  Healthy: 940 (94.00%)
+  Warning: 58 (5.80%)
+  Critical: 2 (0.20%)
+
+--- Healthy (n=940) ---
+Date range: 2024-01-01 00:00:00 -> 2026-09-26 00:00:00
+                            count       mean        std        min        25%        50%        75%        max
+voltage_per_cell_v          940.0   2.100449   0.046564   2.001035   2.068720   2.100830   2.132586   2.200000
+temperature_c               940.0  24.985574   2.060223  20.000000  23.557767  24.936102  26.309550  32.516399
+load_percent                940.0  60.170898  10.092419  27.587327  53.216851  60.394285  66.532229  91.520567
+backup_time_min             940.0  30.154801   4.449929  20.244491  26.932060  30.387417  33.337311  40.000000
+charger_efficiency_percent  940.0  91.997177   1.045542  86.630184  91.353841  91.968751  92.690822  95.000000
+Representative most-abnormal rows (top 3):
+      date health_status  voltage_per_cell_v  temperature_c  load_percent  backup_time_min  charger_efficiency_percent
+2025-01-26       Healthy            2.168722      20.728652     91.377485        35.280284                   92.223239
+2026-03-07       Healthy            2.168128      28.281229     91.520567        24.382530                   92.242882
+2024-02-22       Healthy            2.053653      24.880949     27.587327        24.878062                   91.747432
+
+--- Warning (n=58) ---
+Date range: 2024-04-25 00:00:00 -> 2026-09-25 00:00:00
+                            count       mean       std        min        25%        50%        75%        max
+voltage_per_cell_v           58.0   2.027097  0.068242   1.919101   1.969310   1.996734   2.086002   2.183869
+temperature_c                58.0  25.745570  2.394102  20.758600  24.447803  25.874561  26.870768  30.862414
+load_percent                 58.0  58.587064  9.008682  40.506282  52.551129  58.234446  64.450146  77.547942
+backup_time_min              58.0  24.018378  7.133846  15.420585  18.852352  20.380071  29.306911  39.617229
+charger_efficiency_percent   58.0  91.315730  1.727696  86.270024  90.843156  91.792103  92.403082  94.046862
+Representative most-abnormal rows (top 3):
+      date health_status  voltage_per_cell_v  temperature_c  load_percent  backup_time_min  charger_efficiency_percent
+2025-09-18       Warning            1.965538      24.924859     42.687987        37.474691                   87.707992
+2025-09-12       Warning            1.964655      26.711111     76.494809        35.353053                   87.937064
+2024-05-21       Warning            2.130300      22.439141     77.547942        19.590353                   93.696456
+
+--- Critical (n=2) ---
+Date range: 2024-10-24 00:00:00 -> 2026-04-19 00:00:00
+                            count       mean       std        min        25%        50%        75%        max
+voltage_per_cell_v            2.0   2.087418  0.017270   2.075206   2.081312   2.087418   2.093524   2.099630
+temperature_c                 2.0  25.853934  1.895988  24.513269  25.183601  25.853934  26.524267  27.194600
+load_percent                  2.0  43.367716  1.379995  42.391912  42.879814  43.367716  43.855618  44.343520
+backup_time_min               2.0  13.966778  1.407227  12.971718  13.469248  13.966778  14.464308  14.961838
+charger_efficiency_percent    2.0  92.916882  0.488897  92.571179  92.744031  92.916882  93.089733  93.262584
+Representative most-abnormal rows (top 3):
+      date health_status  voltage_per_cell_v  temperature_c  load_percent  backup_time_min  charger_efficiency_percent
+2024-10-24      Critical            2.099630      24.513269     42.391912        12.971718                   93.262584
+2026-04-19      Critical            2.075206      27.194600     44.343520        14.961838                   92.571179

@@ -1,0 +1,73 @@
+Prescriptive Maintenance Recommendations for Ups
+============================================================
+
+Asset #163 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 10.6250):
+  Action: Check and calibrate charger circuit
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $1,200.00
+  Downtime: 45-60 minutes
+  Production Impact: $2,250.00/hr
+  Confidence: 82.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #767 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 8.5000):
+  Action: Check and calibrate charger circuit
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $1,200.00
+  Downtime: 45-60 minutes
+  Production Impact: $1,800.00/hr
+  Confidence: 82.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #918 - Current Health: Warning
+Failure Mode: Reduced capacity
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 5.6667):
+  Action: Check and calibrate charger circuit
+  Urgency: High
+  Time Frame: within 10 days
+  Cost: $1,200.00
+  Downtime: 45-60 minutes
+  Production Impact: $1,200.00/hr
+  Confidence: 82.00%
+  Failure Mode Addressed: Reduced capacity
+
+
+Asset #702 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 7.0833):
+  Action: Check and calibrate charger circuit
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $1,200.00
+  Downtime: 45-60 minutes
+  Production Impact: $1,500.00/hr
+  Confidence: 82.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #20 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 6.3750):
+  Action: Check and calibrate charger circuit
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $1,200.00
+  Downtime: 45-60 minutes
+  Production Impact: $1,350.00/hr
+  Confidence: 82.00%
+  Failure Mode Addressed: Normal
+
+

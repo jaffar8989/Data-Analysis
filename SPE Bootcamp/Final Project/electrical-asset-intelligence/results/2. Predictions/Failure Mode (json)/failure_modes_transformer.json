@@ -1,0 +1,172 @@
+{
+  "538": {
+    "failure_mode": "Insulation Degradation",
+    "confidence": 0.85,
+    "risk_score": 0.7746848169997489,
+    "risk_rank": 1,
+    "top_features": [
+      {
+        "name": "oil_temp_c",
+        "value": 120.0,
+        "importance": 0.41376265709787197
+      },
+      {
+        "name": "winding_temp_c",
+        "value": 125.0,
+        "importance": 0.21199396803325657
+      },
+      {
+        "name": "load_percent",
+        "value": 94.54157433750288,
+        "importance": 0.19915842058434646
+      },
+      {
+        "name": "insulation_resistance_mohm",
+        "value": 1462.068997180355,
+        "importance": 0.1156690470732227
+      },
+      {
+        "name": "oil_temp_rate",
+        "value": 2.7965308740097043,
+        "importance": 0.022248213296045552
+      }
+    ],
+    "asset_id": "transformer_538"
+  },
+  "526": {
+    "failure_mode": "Insulation Degradation",
+    "confidence": 0.85,
+    "risk_score": 0.7614426216769223,
+    "risk_rank": 2,
+    "top_features": [
+      {
+        "name": "oil_temp_c",
+        "value": 107.45919669896765,
+        "importance": 0.41376265709787197
+      },
+      {
+        "name": "winding_temp_c",
+        "value": 125.0,
+        "importance": 0.21199396803325657
+      },
+      {
+        "name": "load_percent",
+        "value": 63.24405394375148,
+        "importance": 0.19915842058434646
+      },
+      {
+        "name": "insulation_resistance_mohm",
+        "value": 1432.869761829255,
+        "importance": 0.1156690470732227
+      },
+      {
+        "name": "oil_temp_rate",
+        "value": -2.693706229152639,
+        "importance": 0.022248213296045552
+      }
+    ],
+    "asset_id": "transformer_526"
+  },
+  "525": {
+    "failure_mode": "Insulation Degradation",
+    "confidence": 0.85,
+    "risk_score": 0.7538057064223069,
+    "risk_rank": 3,
+    "top_features": [
+      {
+        "name": "oil_temp_c",
+        "value": 110.15290292812028,
+        "importance": 0.41376265709787197
+      },
+      {
+        "name": "winding_temp_c",
+        "value": 116.05299267688716,
+        "importance": 0.21199396803325657
+      },
+      {
+        "name": "load_percent",
+        "value": 83.54525227066615,
+        "importance": 0.19915842058434646
+      },
+      {
+        "name": "insulation_resistance_mohm",
+        "value": 1418.1049574703516,
+        "importance": 0.1156690470732227
+      },
+      {
+        "name": "oil_temp_rate",
+        "value": 6.674811258372287,
+        "importance": 0.022248213296045552
+      }
+    ],
+    "asset_id": "transformer_525"
+  },
+  "544": {
+    "failure_mode": "Insulation Degradation",
+    "confidence": 0.85,
+    "risk_score": 0.7514092026422687,
+    "risk_rank": 4,
+    "top_features": [
+      {
+        "name": "oil_temp_c",
+        "value": 120.0,
+        "importance": 0.41376265709787197
+      },
+      {
+        "name": "winding_temp_c",
+        "value": 125.0,
+        "importance": 0.21199396803325657
+      },
+      {
+        "name": "load_percent",
+        "value": 92.5547569831549,
+        "importance": 0.19915842058434646
+      },
+      {
+        "name": "insulation_resistance_mohm",
+        "value": 1617.976479391114,
+        "importance": 0.1156690470732227
+      },
+      {
+        "name": "oil_temp_rate",
+        "value": 0.0,
+        "importance": 0.022248213296045552
+      }
+    ],
+    "asset_id": "transformer_544"
+  },
+  "537": {
+    "failure_mode": "Insulation Degradation",
+    "confidence": 0.85,
+    "risk_score": 0.7512939064862226,
+    "risk_rank": 5,
+    "top_features": [
+      {
+        "name": "oil_temp_c",
+        "value": 117.2034691259903,
+        "importance": 0.41376265709787197
+      },
+      {
+        "name": "winding_temp_c",
+        "value": 125.0,
+        "importance": 0.21199396803325657
+      },
+      {
+        "name": "load_percent",
+        "value": 53.99973492348376,
+        "importance": 0.19915842058434646
+      },
+      {
+        "name": "insulation_resistance_mohm",
+        "value": 1546.913101262328,
+        "importance": 0.1156690470732227
+      },
+      {
+        "name": "oil_temp_rate",
+        "value": -2.7965308740097043,
+        "importance": 0.022248213296045552
+      }
+    ],
+    "asset_id": "transformer_537"
+  }
+}

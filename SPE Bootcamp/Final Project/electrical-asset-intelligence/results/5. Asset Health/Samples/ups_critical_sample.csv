@@ -1,0 +1,3 @@
+date,voltage_per_cell_v,temperature_c,load_percent,backup_time_min,charger_efficiency_percent,operating_mode,health_status,failure_mode
+2024-10-24,2.0996295415936546,24.51326853413394,42.39191188019224,12.971718427149524,93.2625841034272,Float,Critical,Capacity loss
+2026-04-19,2.0752060913994925,27.19460037508742,44.34351968394404,14.961838301531214,92.57117940621922,Float,Critical,Capacity loss

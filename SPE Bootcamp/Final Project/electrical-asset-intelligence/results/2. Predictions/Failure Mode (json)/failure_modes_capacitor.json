@@ -1,0 +1,172 @@
+{
+  "446": {
+    "failure_mode": "Harmonic Overload",
+    "confidence": 0.9,
+    "risk_score": 0.7557320869690267,
+    "risk_rank": 1,
+    "top_features": [
+      {
+        "name": "harmonic_distortion_percent",
+        "value": 10.09655178391775,
+        "importance": 0.9790471095546793
+      },
+      {
+        "name": "temp_rate",
+        "value": 5.1630923785431975,
+        "importance": 0.018628249871073158
+      },
+      {
+        "name": "voltage_kv",
+        "value": 11.174825023649849,
+        "importance": 0.002324640574228829
+      },
+      {
+        "name": "current_a",
+        "value": 42.175986143189725,
+        "importance": 3.1943780437706352e-15
+      },
+      {
+        "name": "power_factor",
+        "value": 0.905906883988826,
+        "importance": 2.439083404965227e-15
+      }
+    ],
+    "asset_id": "capacitor_446"
+  },
+  "447": {
+    "failure_mode": "Harmonic Overload",
+    "confidence": 0.9,
+    "risk_score": 0.7536663706019575,
+    "risk_rank": 2,
+    "top_features": [
+      {
+        "name": "harmonic_distortion_percent",
+        "value": 10.83615595718278,
+        "importance": 0.9790471095546793
+      },
+      {
+        "name": "temp_rate",
+        "value": -0.5296255568889947,
+        "importance": 0.018628249871073158
+      },
+      {
+        "name": "voltage_kv",
+        "value": 10.835276106826454,
+        "importance": 0.002324640574228829
+      },
+      {
+        "name": "current_a",
+        "value": 53.659353521441474,
+        "importance": 3.1943780437706352e-15
+      },
+      {
+        "name": "power_factor",
+        "value": 0.9097011605816824,
+        "importance": 2.439083404965227e-15
+      }
+    ],
+    "asset_id": "capacitor_447"
+  },
+  "449": {
+    "failure_mode": "Harmonic Overload",
+    "confidence": 0.9,
+    "risk_score": 0.7520978974056843,
+    "risk_rank": 3,
+    "top_features": [
+      {
+        "name": "harmonic_distortion_percent",
+        "value": 9.84,
+        "importance": 0.9790471095546793
+      },
+      {
+        "name": "temp_rate",
+        "value": 2.0841318338010453,
+        "importance": 0.018628249871073158
+      },
+      {
+        "name": "voltage_kv",
+        "value": 11.166929983284268,
+        "importance": 0.002324640574228829
+      },
+      {
+        "name": "current_a",
+        "value": 57.15683390915592,
+        "importance": 3.1943780437706352e-15
+      },
+      {
+        "name": "power_factor",
+        "value": 0.9226353345534564,
+        "importance": 2.439083404965227e-15
+      }
+    ],
+    "asset_id": "capacitor_449"
+  },
+  "443": {
+    "failure_mode": "Harmonic Overload",
+    "confidence": 0.9,
+    "risk_score": 0.7413076705522295,
+    "risk_rank": 4,
+    "top_features": [
+      {
+        "name": "harmonic_distortion_percent",
+        "value": 8.984930157723396,
+        "importance": 0.9790471095546793
+      },
+      {
+        "name": "temp_rate",
+        "value": 5.167486355946089,
+        "importance": 0.018628249871073158
+      },
+      {
+        "name": "voltage_kv",
+        "value": 11.085919669896766,
+        "importance": 0.002324640574228829
+      },
+      {
+        "name": "current_a",
+        "value": 52.76625609992392,
+        "importance": 3.1943780437706352e-15
+      },
+      {
+        "name": "power_factor",
+        "value": 0.8834881078875029,
+        "importance": 2.439083404965227e-15
+      }
+    ],
+    "asset_id": "capacitor_443"
+  },
+  "445": {
+    "failure_mode": "Harmonic Overload",
+    "confidence": 0.9,
+    "risk_score": 0.7377800439823659,
+    "risk_rank": 5,
+    "top_features": [
+      {
+        "name": "harmonic_distortion_percent",
+        "value": 9.661158143807262,
+        "importance": 0.9790471095546793
+      },
+      {
+        "name": "temp_rate",
+        "value": -4.58256386526719,
+        "importance": 0.018628249871073158
+      },
+      {
+        "name": "voltage_kv",
+        "value": 10.651614090785213,
+        "importance": 0.002324640574228829
+      },
+      {
+        "name": "current_a",
+        "value": 52.91013283542363,
+        "importance": 3.1943780437706352e-15
+      },
+      {
+        "name": "power_factor",
+        "value": 0.910208845266671,
+        "importance": 2.439083404965227e-15
+      }
+    ],
+    "asset_id": "capacitor_445"
+  }
+}

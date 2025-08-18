@@ -1,0 +1,73 @@
+Prescriptive Maintenance Recommendations for Transformer
+============================================================
+
+Asset #540 - Current Health: Critical
+Failure Mode: Overheating
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 14.1176):
+  Action: Clean cooling system and check oil flow
+  Urgency: Immediate
+  Time Frame: within 24 hours
+  Cost: $850.00
+  Downtime: 30-45 minutes
+  Production Impact: $3,000.00/hr
+  Confidence: 80.00%
+  Failure Mode Addressed: Overheating
+
+
+Asset #801 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 11.2941):
+  Action: Clean cooling system and check oil flow
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $850.00
+  Downtime: 30-45 minutes
+  Production Impact: $2,400.00/hr
+  Confidence: 80.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #95 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 7.5294):
+  Action: Clean cooling system and check oil flow
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $850.00
+  Downtime: 30-45 minutes
+  Production Impact: $1,600.00/hr
+  Confidence: 80.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #509 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 9.4118):
+  Action: Clean cooling system and check oil flow
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $850.00
+  Downtime: 30-45 minutes
+  Production Impact: $2,000.00/hr
+  Confidence: 80.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #252 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 8.4706):
+  Action: Clean cooling system and check oil flow
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $850.00
+  Downtime: 30-45 minutes
+  Production Impact: $1,800.00/hr
+  Confidence: 80.00%
+  Failure Mode Addressed: Normal
+
+

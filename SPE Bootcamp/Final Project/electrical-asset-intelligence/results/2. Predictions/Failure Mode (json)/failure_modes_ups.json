@@ -1,0 +1,172 @@
+{
+  "297": {
+    "failure_mode": "Battery Failure",
+    "confidence": 0.8,
+    "risk_score": 0.7886076418718482,
+    "risk_rank": 1,
+    "top_features": [
+      {
+        "name": "backup_time_min",
+        "value": 12.971718427149524,
+        "importance": 0.6603292731446626
+      },
+      {
+        "name": "voltage_per_cell_v",
+        "value": 2.0996295415936546,
+        "importance": 0.2862970226608889
+      },
+      {
+        "name": "load_percent",
+        "value": 42.39191188019224,
+        "importance": 0.04469302897597679
+      },
+      {
+        "name": "voltage_7d_avg",
+        "value": 2.0716374555105097,
+        "importance": 0.0032435833360513196
+      },
+      {
+        "name": "day_of_year",
+        "value": 298,
+        "importance": 0.0024571348837482154
+      }
+    ],
+    "asset_id": "ups_297"
+  },
+  "839": {
+    "failure_mode": "Battery Failure",
+    "confidence": 0.8,
+    "risk_score": 0.7385710805065957,
+    "risk_rank": 2,
+    "top_features": [
+      {
+        "name": "backup_time_min",
+        "value": 14.961838301531214,
+        "importance": 0.6603292731446626
+      },
+      {
+        "name": "voltage_per_cell_v",
+        "value": 2.0752060913994925,
+        "importance": 0.2862970226608889
+      },
+      {
+        "name": "load_percent",
+        "value": 44.34351968394404,
+        "importance": 0.04469302897597679
+      },
+      {
+        "name": "voltage_7d_avg",
+        "value": 2.1020019000359937,
+        "importance": 0.0032435833360513196
+      },
+      {
+        "name": "day_of_year",
+        "value": 109,
+        "importance": 0.0024571348837482154
+      }
+    ],
+    "asset_id": "ups_839"
+  },
+  "618": {
+    "failure_mode": "Battery Failure",
+    "confidence": 0.8,
+    "risk_score": 0.7194243682477288,
+    "risk_rank": 3,
+    "top_features": [
+      {
+        "name": "backup_time_min",
+        "value": 32.09804986012059,
+        "importance": 0.6603292731446626
+      },
+      {
+        "name": "voltage_per_cell_v",
+        "value": 1.9191010387306424,
+        "importance": 0.2862970226608889
+      },
+      {
+        "name": "load_percent",
+        "value": 59.05541285557997,
+        "importance": 0.04469302897597679
+      },
+      {
+        "name": "voltage_7d_avg",
+        "value": 2.031288066534663,
+        "importance": 0.0032435833360513196
+      },
+      {
+        "name": "day_of_year",
+        "value": 253,
+        "importance": 0.0024571348837482154
+      }
+    ],
+    "asset_id": "ups_618"
+  },
+  "293": {
+    "failure_mode": "Battery Failure",
+    "confidence": 0.8,
+    "risk_score": 0.7130016391000268,
+    "risk_rank": 4,
+    "top_features": [
+      {
+        "name": "backup_time_min",
+        "value": 15.420584689824077,
+        "importance": 0.6603292731446626
+      },
+      {
+        "name": "voltage_per_cell_v",
+        "value": 2.08642892022103,
+        "importance": 0.2862970226608889
+      },
+      {
+        "name": "load_percent",
+        "value": 63.94671529822981,
+        "importance": 0.04469302897597679
+      },
+      {
+        "name": "voltage_7d_avg",
+        "value": 2.0549449785660276,
+        "importance": 0.0032435833360513196
+      },
+      {
+        "name": "day_of_year",
+        "value": 294,
+        "importance": 0.0024571348837482154
+      }
+    ],
+    "asset_id": "ups_293"
+  },
+  "620": {
+    "failure_mode": "Battery Failure",
+    "confidence": 0.8,
+    "risk_score": 0.6887992466990026,
+    "risk_rank": 5,
+    "top_features": [
+      {
+        "name": "backup_time_min",
+        "value": 35.353052799895934,
+        "importance": 0.6603292731446626
+      },
+      {
+        "name": "voltage_per_cell_v",
+        "value": 1.9646553716006323,
+        "importance": 0.2862970226608889
+      },
+      {
+        "name": "load_percent",
+        "value": 76.4948089432392,
+        "importance": 0.04469302897597679
+      },
+      {
+        "name": "voltage_7d_avg",
+        "value": 2.020813251470956,
+        "importance": 0.0032435833360513196
+      },
+      {
+        "name": "day_of_year",
+        "value": 255,
+        "importance": 0.0024571348837482154
+      }
+    ],
+    "asset_id": "ups_620"
+  }
+}

@@ -1,0 +1,73 @@
+Prescriptive Maintenance Recommendations for Capacitor
+============================================================
+
+Asset #887 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 18.4615):
+  Action: Improve ventilation and check connections
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $650.00
+  Downtime: 30-45 minutes
+  Production Impact: $3,000.00/hr
+  Confidence: 75.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #295 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 14.7692):
+  Action: Improve ventilation and check connections
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $650.00
+  Downtime: 30-45 minutes
+  Production Impact: $2,400.00/hr
+  Confidence: 75.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #71 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 9.8462):
+  Action: Improve ventilation and check connections
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $650.00
+  Downtime: 30-45 minutes
+  Production Impact: $1,600.00/hr
+  Confidence: 75.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #522 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 12.3077):
+  Action: Improve ventilation and check connections
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $650.00
+  Downtime: 30-45 minutes
+  Production Impact: $2,000.00/hr
+  Confidence: 75.00%
+  Failure Mode Addressed: Normal
+
+
+Asset #489 - Current Health: Healthy
+Failure Mode: Normal
+----------------------------------------
+Recommendation #1 (Cost-Benefit: 11.0769):
+  Action: Improve ventilation and check connections
+  Urgency: Medium
+  Time Frame: as part of routine maintenance
+  Cost: $650.00
+  Downtime: 30-45 minutes
+  Production Impact: $1,800.00/hr
+  Confidence: 75.00%
+  Failure Mode Addressed: Normal
+
+

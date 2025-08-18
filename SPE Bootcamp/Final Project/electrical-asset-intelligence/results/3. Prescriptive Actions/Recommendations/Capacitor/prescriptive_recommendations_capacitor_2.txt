@@ -1,0 +1,28 @@
+Prescriptive Maintenance Recommendations for Capacitor
+Generated: 2025-08-18 19:38:52.801022
+
+Asset #446 - Health: Critical
+Failure Mode: Harmonic Overload (Confidence: 0.90)
+  1. Replace affected capacitors and check fuses | urgency: Medium | cost: $1,800 | cb: 3.778
+  2. Install harmonic filters | urgency: Immediate | cost: $4,500 | cb: 1.689
+
+Asset #447 - Health: Critical
+Failure Mode: Harmonic Overload (Confidence: 0.90)
+  1. Replace affected capacitors and check fuses | urgency: Medium | cost: $1,800 | cb: 3.778
+  2. Install harmonic filters | urgency: Immediate | cost: $4,500 | cb: 1.689
+
+Asset #449 - Health: Critical
+Failure Mode: Harmonic Overload (Confidence: 0.90)
+  1. Replace affected capacitors and check fuses | urgency: Medium | cost: $1,800 | cb: 3.778
+  2. Install harmonic filters | urgency: Immediate | cost: $4,500 | cb: 1.689
+
+Asset #443 - Health: Critical
+Failure Mode: Harmonic Overload (Confidence: 0.90)
+  1. Replace affected capacitors and check fuses | urgency: Medium | cost: $1,800 | cb: 3.778
+  2. Install harmonic filters | urgency: Immediate | cost: $4,500 | cb: 1.689
+
+Asset #445 - Health: Critical
+Failure Mode: Harmonic Overload (Confidence: 0.90)
+  1. Replace affected capacitors and check fuses | urgency: Medium | cost: $1,800 | cb: 3.778
+  2. Install harmonic filters | urgency: Immediate | cost: $4,500 | cb: 1.689
+

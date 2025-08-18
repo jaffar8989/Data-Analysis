@@ -1,0 +1,28 @@
+Prescriptive Maintenance Recommendations for Ups
+Generated: 2025-08-18 19:40:35.953875
+
+Asset #297 - Health: Critical
+Failure Mode: Battery Failure (Confidence: 0.80)
+  1. Perform battery conditioning and load test | urgency: Medium | cost: $950 | cb: 7.895
+  2. Replace battery cells showing degradation | urgency: Immediate | cost: $2,200 | cb: 4.091
+
+Asset #839 - Health: Critical
+Failure Mode: Battery Failure (Confidence: 0.80)
+  1. Perform battery conditioning and load test | urgency: Medium | cost: $950 | cb: 7.895
+  2. Replace battery cells showing degradation | urgency: Immediate | cost: $2,200 | cb: 4.091
+
+Asset #618 - Health: Warning
+Failure Mode: Battery Failure (Confidence: 0.80)
+  1. Perform battery conditioning and load test | urgency: Medium | cost: $950 | cb: 7.895
+  2. Replace battery cells showing degradation | urgency: High | cost: $2,200 | cb: 4.091
+
+Asset #293 - Health: Warning
+Failure Mode: Battery Failure (Confidence: 0.80)
+  1. Perform battery conditioning and load test | urgency: Medium | cost: $950 | cb: 7.895
+  2. Replace battery cells showing degradation | urgency: High | cost: $2,200 | cb: 4.091
+
+Asset #620 - Health: Warning
+Failure Mode: Battery Failure (Confidence: 0.80)
+  1. Perform battery conditioning and load test | urgency: Medium | cost: $950 | cb: 7.895
+  2. Replace battery cells showing degradation | urgency: High | cost: $2,200 | cb: 4.091
+
