@@ -2,7 +2,7 @@
 
 ## AI-Powered Prescriptive Electrical Asset Intelligence Platform
 
-![Project Banner](results/1.%20Model%20Evaluation/feature_importance/feature_importance_random_forest_transformer.png)
+
 
 **A prescriptive maintenance system for electrical assets in midstream gas operations**
 
