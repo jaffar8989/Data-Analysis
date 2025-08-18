@@ -2,9 +2,11 @@
 
 ## Project Title: **AI-Powered Prescriptive Electrical Asset Intelligence Platform for Gas Midstream Operations**
 
-**Submitted by**: Jaffar Hasan, Electrical Engineering Intern, Maintenance Department, Bapco Gas  
-**Submission Deadline**: August 18, 2025, 11:59 PM GST  
-**Contact**: jaffarhassan2003@gmail.com, +973 3734 1074
+*Submitted by*: **Jaffar Hasan**, Electrical Engineering Intern, Maintenance Department, Bapco Gas  
+*Course*: **SPE AI Machine Learning for Energy Professionals Boot Camp**  
+*Instructor*: **Dr. Luigi Saputelli**  
+*Submission Deadline*: **August 18, 2025, 11:59 PM GST**  
+*Contact*: jaffarhassan2003@gmail.com, +973 3734 1074
 
 ---
 
