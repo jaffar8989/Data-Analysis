@@ -2,9 +2,9 @@
 
 ## Project Title: **AI-Powered Prescriptive Electrical Asset Intelligence Platform for Gas Midstream Operations**
 
-**Submitted by**: [Your Name], Electrical Engineering Intern, Maintenance Department, Bapco Gas  
+**Submitted by**: Jaffar Hasan, Electrical Engineering Intern, Maintenance Department, Bapco Gas  
 **Submission Deadline**: August 18, 2025, 11:59 PM GST  
-**Contact**: abdulla.moosa@bapcoenergies.com
+**Contact**: jaffarhassan2003@gmail.com, 37341074
 
 ---
 
