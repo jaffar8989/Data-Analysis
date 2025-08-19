@@ -87,13 +87,13 @@ electrical-asset-intelligence/
 │ ├── best_random_forest_transformer.pkl      # Optimized classifiers
 │ └── [other models]                          # Asset-specific models
 ├── results/                                   # Comprehensive analytical outputs
-│ ├── 1.%20Model%20Evaluation                # Performance metrics & analysis
-│ ├── 2.%20Predictions                       # Failure probabilities & risk
-│ ├── 3.%20Prescriptive%20Actions            # Maintenance recommendations
-│ ├── 4.%20Business%20Impact                 # ROI & financial analysis
-│ ├── 5.%20Asset%20Health                    # Health monitoring & trends
-│ ├── 6.%20Data%20Exploration                # Statistical insights
-│ └── 7.%20Reports%20&%20Analyses            # Executive summaries
+│ ├── 1.Model Evaluation                 # Performance metrics & analysis
+│ ├── 2.Predictions                      # Failure probabilities & risk
+│ ├──3.Prescriptive Actions             # Maintenance recommendations
+│ ├── 4. Business Impact                 # ROI & financial analysis
+│ ├── 5.Asset Health                     # Health monitoring & trends
+│ ├── 6.Data Exploration                 # Statistical insights
+│ └── 7.Reports & Analyses               # Executive summaries
 └── ── ── ── ── ── ── ── ── ── ── ── ── ── 
 ```
 
