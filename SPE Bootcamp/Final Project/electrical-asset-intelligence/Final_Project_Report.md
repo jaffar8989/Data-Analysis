@@ -156,8 +156,8 @@ electrical-asset-intelligence/
 │ ├── 3.Prescriptive Actions
 │ ├── 4.Business Impact
 │ ├── 5.Asset Health
-│ ├── 6.Data Exploration
-│ └── 7.Reports & Analyses
+│ ├── 7.Reports & Analyses               
+└──   8. Cache & Miscellaneous          
 └── ── ── ── ── ── ── ── ── ── ── ── ── ── 
 ```
 
