@@ -74,22 +74,22 @@ electrical-asset-intelligence/
 │ ├── data
 │ ├── 01_data_exploration.ipynb                # Statistical analysis & insights
 │ ├── 02_anomaly_detection.ipynb               # LSTM autoencoders implementation
-│ ├── 03_hyperparameter_tuning.ipynb          # Bayesian optimization
+│ ├── 03_hyperparameter_tuning.ipynb           # Bayesian optimization
 │ ├── 04_reinforcement_learning_scheduling.ipynb # Q-learning for scheduling
-│ └── 05_prescriptive_engine_demo.ipynb       # End-to-end demonstration
+│ └── 05_prescriptive_engine_demo.ipynb        # End-to-end demonstration
 ├── src/
 │ ├── data_preprocessing.py                    # Advanced feature engineering
 │ ├── anomaly_detection.py                     # Deep learning anomaly detection
 │ ├── health_classifier.py                     # Multi-class health classification
-│ └── prescriptive_engine.py                  # Business impact quantification
+│ └── prescriptive_engine.py                   # Business impact quantification
 ├── models/
-│ ├── lstm_autoencoder_transformer.h5         # Deep learning models
-│ ├── best_random_forest_transformer.pkl      # Optimized classifiers
-│ └── [other models]                          # Asset-specific models
+│ ├── lstm_autoencoder_transformer.h5          # Deep learning models
+│ ├── best_random_forest_transformer.pkl       # Optimized classifiers
+│ └── [other models]                           # Asset-specific models
 ├── results/                                   # Comprehensive analytical outputs
 │ ├── 1.Model Evaluation                 # Performance metrics & analysis
 │ ├── 2.Predictions                      # Failure probabilities & risk
-│ ├──3.Prescriptive Actions             # Maintenance recommendations
+│ ├──3.Prescriptive Actions              # Maintenance recommendations
 │ ├── 4. Business Impact                 # ROI & financial analysis
 │ ├── 5.Asset Health                     # Health monitoring & trends
 │ ├── 6.Data Exploration                 # Statistical insights
