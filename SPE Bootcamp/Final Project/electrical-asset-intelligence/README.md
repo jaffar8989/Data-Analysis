@@ -89,11 +89,12 @@ electrical-asset-intelligence/
 ├── results/                                   # Comprehensive analytical outputs
 │ ├── 1.Model Evaluation                 # Performance metrics & analysis
 │ ├── 2.Predictions                      # Failure probabilities & risk
-│ ├── 3.Prescriptive Actions              # Maintenance recommendations
+│ ├── 3.Prescriptive Actions             # Maintenance recommendations
 │ ├── 4. Business Impact                 # ROI & financial analysis
 │ ├── 5.Asset Health                     # Health monitoring & trends
 │ ├── 6.Data Exploration                 # Statistical insights
-│ └── 7.Reports & Analyses               # Executive summaries
+│ ├── 7.Reports & Analyses               # Executive summaries
+└──   8. Cache & Miscellaneous           # Temporary files 
 └── ── ── ── ── ── ── ── ── ── ── ── ── ── 
 ```
 
