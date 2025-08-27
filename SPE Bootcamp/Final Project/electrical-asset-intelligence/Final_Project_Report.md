@@ -236,6 +236,17 @@ For this multi-class classification task, model performance is evaluated using s
 
 The project presents comprehensive results across seven analytical categories, demonstrating the practical value of prescriptive maintenance in midstream operations.
 
+#### Results source of truth
+
+For reviewers: the most up-to-date and most accurate metrics, plots, and tuned settings are in the Jupyter notebooks. If any value in this report differs from a notebook, trust the notebook.
+
+**Notebook index**
+- `notebooks/01_data_exploration.ipynb` – exploratory analysis, statistics, and sanity checks
+- `notebooks/02_anomaly_detection.ipynb` – LSTM autoencoder training and anomaly scoring
+- `notebooks/03_hyperparameter_tuning.ipynb` – Bayesian optimization for classifiers
+- `notebooks/04_reinforcement_learning_scheduling.ipynb` – Q-learning maintenance scheduling
+- `notebooks/05_prescriptive_engine_demo.ipynb` – end to end prescriptive workflow
+
 #### **Comprehensive Results Architecture**
 
 **1. Model Evaluation Results** (`results/1. Model Evaluation/`)
