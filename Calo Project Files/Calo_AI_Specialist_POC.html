@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Calo AI Specialist POC - Subscription Growth Agent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; margin: 2rem; line-height:1.6}
+h1,h2,h3{margin-top:1.2em}
+pre, code{background:#f6f8fa; padding:0.2rem 0.4rem; border-radius:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+pre{padding:1rem; overflow:auto}
+blockquote{border-left:4px solid #e5e7eb; padding:0.5rem 1rem; color:#374151; background:#fafafa}
+hr{border:none; border-top:1px solid #e5e7eb; margin:2rem 0}
+</style>
+</head>
+<body>
+<article>
+<h1>Calo AI Specialist POC - Subscription Growth Agent</h1>
+<h2>Executive Summary</h2>
+<ul>
+<li>Reduce churn risk visibility from hours to seconds.</li>
+<li>Generate tailored Arabic or UK English offers with a single click.</li>
+<li>Keep outputs automation ready using a JSON block while showing a clean human plan.</li>
+<li>Model choice stays flexible via Hugging Face Inference Router.</li>
+</ul>
+
+<h2>Architecture and Design</h2>
+<pre># Architecture and Design
+
+- Frontend - Streamlit single file app with three tabs: Data, Scoring, Recommendations.
+- Data - CSV upload or synthetic generator with realistic distributions for last_order_days, orders_month, lifetime_months.
+- Risk Model - Simple interpretable score combined and normalised to 0-100.
+- LLM Layer - Hugging Face Inference Router with OpenAI compatible client. Default model gpt-oss-120b from Fireworks.
+- Output Contract - Human plan text plus machine JSON. UI renders plan with bold emphasis while JSON stays internal.
+- i18n - Arabic RTL and UK English LTR with CSS toggles and language switcher.
+</pre>
+
+<h2>Product Requirements Document</h2>
+<pre># Product Requirements Document - Subscription Growth Agent
+
+## Problem
+Meal subscriptions face churn due to waning engagement. Teams need a fast way to spot at-risk users and push the right offer at the right time without manual analysis.
+
+## Goals
+- Identify top at-risk subscribers in seconds.
+- Generate human readable plan text plus structured JSON for automation.
+- Support Arabic Gulf tone and UK English tone with a single codebase.
+- Keep the model choice abstract through the HF Inference Router.
+
+## Non-goals
+- No PII ingestion in this POC.
+- No production CRM integration in this POC.
+
+## Users and Personas
+- Retention Marketer - wants targeted offers and copy quickly.
+- CRM Operator - needs structured payloads for campaigns.
+- Growth PM - wants measurable lift and iteration speed.
+
+## User Flow
+1. Load or generate sample data.
+2. Review data quality tips.
+3. Calculate churn and select top N.
+4. Generate AI recommendations.
+5. Read plan text and inspect per-customer actions.
+6. Export or plug into CRM in a next iteration.
+
+## Functional Requirements
+- Upload CSV with required schema.
+- Create synthetic dataset when needed.
+- Compute churn_score in range 0 to 100.
+- Select top N customers: 5 or 10 or 15 or 20.
+- Generate bilingual plan and JSON block based on language.
+- Render bold emphasis for offers and percentages.
+- Show per customer expander with message, expected impact, rationale.
+
+## Acceptance Criteria
+- With sample data, generation completes under 5 seconds locally.
+- Plan text renders with consistent spacing and visible bold.
+- JSON is parsed and drives the recommendation UI without exposing raw JSON.
+- Switching language updates UI labels and sample data language.
+
+## Metrics
+- Time to first recommendation.
+- CTR proxy: count of high impact offers.
+- Recall of risky customers vs. baseline heuristic.
+
+## Risks
+- Model variance - mitigated by fixed prompts and constrained outputs.
+- JSON parsing - mitigated by dual extraction of &lt;JSON&gt; or bare array.
+- UI RTL LTR styling - mitigated by conditional CSS blocks.
+
+## Next Steps
+- Connect to CRM segments and A B tests.
+- Add guardrails and observability.
+- Introduce configurable weights for churn once validated.
+</pre>
+
+<h2>Prompts</h2>
+<pre># Prompts
+
+## System - Arabic Gulf
+أنت مساعد تسويق يتحدث العربية ومخصص لدول الخليج. اكتب بالعربية برسالة ودية ومهنية.
+
+## User - Arabic Gulf
+استخدم اللهجة: {dialect}. 1) اكتب فقرة ودية قصيرة بالعربية لكل عميل تشرح العرض المقترح مع رموز تعبيرية.
+2) بعد الفقرات، أضف كتلة &lt;JSON&gt;...&lt;/JSON&gt; فيها مصفوفة كائنات بالحقل:
+customer_id, action, message, expected_lift, rationale.
+القيم بالعربية فقط، وطول message ≤ 120 حرفًا.
+العملاء: {records}
+
+## System - UK English
+You are a marketing assistant specialised for the UK market. Write in professional yet warm UK English.
+
+## User - UK English
+1) For each customer, write a short friendly paragraph in English that explains the retention offer with emojis.
+2) Then add a &lt;JSON&gt;...&lt;/JSON&gt; block containing an array of objects with keys:
+customer_id, action, message, expected_lift, rationale.
+Use UK English tone. Message length ≤ 120 characters.
+Customers: {records}
+</pre>
+
+<h2>60s Demo Scripts</h2>
+<h3>English</h3>
+<pre>60s Demo Script — English
+
+Goal - show end to end value for Calo - reduce churn risk visibility and generate tailored offers in seconds.
+
+0-5s
+Voiceover: &quot;Hi, I am [Your Name]. This is a 1 minute AI prototype for Calo focused on reducing churn and lifting repeat orders.&quot;
+Action: Launch the app. App title visible.
+
+5-12s
+Voiceover: &quot;I can switch Arabic or English. I will pick English for the UK market.&quot;
+Action: Sidebar, choose Language -&gt; English. Theme change optional.
+
+12-18s
+Voiceover: &quot;Data can come from CSV or sample data. I will generate a clean sample.&quot;
+Action: Click Generate sample data. Show table. Open &quot;Data quality tips&quot;.
+
+18-28s
+Voiceover: &quot;Next, we calculate churn risk.&quot;
+Action: Open Scoring. &quot;The score blends time since last order, order frequency, lifetime, and promo usage, then normalises 0 to 100.&quot;
+Action: Select 10 in &quot;Show top at-risk customers&quot;.
+
+28-45s
+Voiceover: &quot;Now AI generates tailored retention offers.&quot;
+Action: Go to Recommendations. Set top 5. Click &quot;Generate retention recommendations&quot;.
+Voiceover: &quot;Under the hood I use Hugging Face Inference Router with an OpenAI compatible client calling GPT-OSS-120B. Data here is synthetic.&quot;
+
+45-55s
+Voiceover: &quot;We get a clean plan plus structured JSON behind the scenes. Key parts are bold and each recommendation shows expected impact.&quot;
+Action: Scroll the plan, expand two recommendations.
+
+55-60s
+Voiceover: &quot;This can ship as a POC and plug into CRM and campaigns. Thank you.&quot;
+Action: End on plan view.
+</pre>
+<h3>Arabic</h3>
+<pre>نص الديمو 60 ثانية — العربية
+
+الهدف - إظهار قيمة فورية لكالو - رؤية واضحة لخطر الانسحاب وتوليد عروض مخصصة خلال ثوانٍ.
+
+0-5 ث
+التعليق الصوتي: &quot;مرحباً، أنا [اسمك]. هذا نموذج ذكاء اصطناعي سريع لمدة دقيقة يركز على خفض الانسحاب وزيادة تكرار الطلب.&quot;
+الإجراء: تشغيل التطبيق وظهور العنوان.
+
+5-12 ث
+التعليق الصوتي: &quot;أبدّل بين العربية والإنجليزية. سأختار الإنجليزية للسوق البريطاني.&quot;
+الإجراء: من الشريط الجانبي اختيار English. تغيير اللون اختياري.
+
+12-18 ث
+التعليق الصوتي: &quot;البيانات من CSV أو بيانات تجريبية. سأولّد عينة نقية.&quot;
+الإجراء: ضغط &quot;إنشاء بيانات تجريبية&quot;. عرض الجدول. فتح &quot;نصائح جودة البيانات&quot;.
+
+18-28 ث
+التعليق الصوتي: &quot;الآن نحسب درجة الانسحاب.&quot;
+الإجراء: فتح تبويب الحساب. &quot;الدرجة تمزج تأخر آخر طلب وتكرار الشراء وطول العلاقة واستخدام العروض ثم نطبّعها من 0 إلى 100.&quot;
+الإجراء: اختيار 10 من &quot;عرض الأعلى خطراً&quot;.
+
+28-45 ث
+التعليق الصوتي: &quot;نولّد عروض احتفاظ مخصصة.&quot;
+الإجراء: تبويب التوصيات. اختيار أعلى 5. ضغط &quot;توليد توصيات الاحتفاظ&quot;.
+التعليق الصوتي: &quot;في الخلفية نستخدم Hugging Face Inference Router بواجهة متوافقة مع OpenAI ونموذج GPT-OSS-120B. البيانات تجريبية.&quot;
+
+45-55 ث
+التعليق الصوتي: &quot;تظهر خطة منسقة مع إبراز العناصر المهمة بخط عريض ولكل توصية تأثير متوقّع.&quot;
+الإجراء: تمرير الخطة وتوسيع توصيتين.
+
+55-60 ث
+التعليق الصوتي: &quot;جاهزة كإثبات مفهوم ويمكن ربطها مع CRM والحملات. شكراً.&quot;
+الإجراء: إنهاء على عرض الخطة.
+</pre>
+
+<h2>Full Source Code</h2>
+<pre># app.py
+# export HF_TOKEN=&quot;hf_...&quot;
+# streamlit run app.py
+
+import os
+import re
+import json
+import html
+import streamlit as st
+import pandas as pd
+import numpy as np
+from openai import OpenAI
+
+# -----------------------------
+# Settings
+# -----------------------------
+HF_ROUTER = &quot;https://router.huggingface.co/v1&quot;
+DEFAULT_MODEL = &quot;openai/gpt-oss-120b:fireworks-ai&quot;
+
+
+# -----------------------------
+# Client and state
+# -----------------------------
+def make_client() -&gt; OpenAI:
+    token = os.environ.get(&quot;HF_TOKEN&quot;)
+    if not token:
+        raise EnvironmentError(&quot;HF_TOKEN not set. Please set your Hugging Face token.&quot;)
+    return OpenAI(base_url=HF_ROUTER, api_key=token)
+
+
+def init_state():
+    if &quot;model&quot; not in st.session_state:
+        st.session_state.model = DEFAULT_MODEL
+    if &quot;plan_text&quot; not in st.session_state:
+        st.session_state.plan_text = &quot;&quot;
+    if &quot;parsed_recs&quot; not in st.session_state:
+        st.session_state.parsed_recs = None
+    if &quot;lang&quot; not in st.session_state:
+        st.session_state.lang = &quot;Arabic&quot;
+    if &quot;dialect&quot; not in st.session_state:
+        st.session_state.dialect = &quot;الخليجية&quot;
+
+
+# -----------------------------
+# LLM helpers
+# -----------------------------
+def extract_text_from_completion(completion) -&gt; str:
+    try:
+        choices = getattr(completion, &quot;choices&quot;, None) or completion.get(&quot;choices&quot;)
+        first = choices[0]
+        msg = getattr(first, &quot;message&quot;, None) or first.get(&quot;message&quot;)
+        if isinstance(msg, dict):
+            return msg.get(&quot;content&quot;, &quot;&quot;)
+        return getattr(msg, &quot;content&quot;, &quot;&quot;) or getattr(first, &quot;text&quot;, &quot;&quot;) or &quot;&quot;
+    except Exception:
+        try:
+            return json.dumps(completion, ensure_ascii=False)
+        except Exception:
+            return str(completion)
+
+
+def split_natural_and_json(full_text: str):
+    if not full_text:
+        return &quot;&quot;, None
+    m = re.search(r&quot;&lt;JSON&gt;([\s\S]*?)&lt;/JSON&gt;&quot;, full_text, re.IGNORECASE)
+    if m:
+        natural = (full_text[:m.start()] + full_text[m.end():]).strip()
+        return natural, m.group(1).strip()
+    m2 = re.search(r&quot;(\{[\s\S]*?\}|\[[\s\S]*?\])&quot;, full_text)
+    if m2:
+        json_text = m2.group(1).strip()
+        natural = (full_text[:m2.start()] + full_text[m2.end():]).strip()
+        return natural, json_text
+    return full_text, None
+
+
+# -----------------------------
+# Data helpers
+# -----------------------------
+def validate_uploaded_df(df: pd.DataFrame):
+    required = {
+        &quot;customer_id&quot;,
+        &quot;last_order_days&quot;,
+        &quot;avg_spend&quot;,
+        &quot;orders_month&quot;,
+        &quot;lifetime_months&quot;,
+        &quot;preference&quot;,
+        &quot;promo_used_recently&quot;,
+    }
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        return (&quot;Missing columns: &quot; if st.session_state.lang == &quot;English&quot; else &quot;الأعمدة الناقصة: &quot;) + &quot;, &quot;.join(missing)
+    return None
+
+
+def generate_sample_subscribers(n=60, lang=&quot;Arabic&quot;):
+    np.random.seed(42)
+    prefs = (
+        [&quot;نباتي&quot;, &quot;نباتي صارم&quot;, &quot;محب اللحوم&quot;, &quot;منخفض الكربوهيدرات&quot;, &quot;متوازن&quot;]
+        if lang == &quot;Arabic&quot;
+        else [&quot;Vegetarian&quot;, &quot;Vegan&quot;, &quot;Meat Lover&quot;, &quot;Low Carb&quot;, &quot;Balanced&quot;]
+    )
+    rows = []
+    for i in range(1, n + 1):
+        last_order_days = int(np.clip(np.random.exponential(12), 0, 120))
+        avg_spend = round(np.random.uniform(1.5, 10), 2)
+        orders_month = int(np.random.poisson(3))
+        lifetime_months = int(np.random.exponential(8))
+        pref = np.random.choice(prefs)
+        promo_used = np.random.choice([0, 1], p=[0.7, 0.3])
+        rows.append(
+            {
+                &quot;customer_id&quot;: f&quot;C{i:04d}&quot;,
+                &quot;last_order_days&quot;: last_order_days,
+                &quot;avg_spend&quot;: avg_spend,
+                &quot;orders_month&quot;: orders_month,
+                &quot;lifetime_months&quot;: lifetime_months,
+                &quot;preference&quot;: pref,
+                &quot;promo_used_recently&quot;: int(promo_used),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def churn_score(df: pd.DataFrame) -&gt; pd.Series:
+    score = (
+        (df[&quot;last_order_days&quot;] * 1.5)
+        - (df[&quot;orders_month&quot;] * 8)
+        - (df[&quot;lifetime_months&quot;] * 0.5)
+        + (5 * (1 - (df[&quot;promo_used_recently&quot;])))
+    ) / (df[&quot;avg_spend&quot;] + 1)
+    s = 100 * (score - score.min()) / (score.max() - score.min() + 1e-6)
+    return s.round(1)
+
+
+# -----------------------------
+# UI styling and rendering
+# -----------------------------
+def style_primary(color: str, lang: str):
+    direction_css = (
+        &quot;&quot;&quot;
+        .stApp { direction: rtl; }
+        .stMarkdown, .stText { text-align: right; }
+        [data-testid=&quot;stSidebar&quot;] { direction: rtl; }
+        &quot;&quot;&quot;
+        if lang == &quot;Arabic&quot;
+        else &quot;&quot;&quot;
+        .stApp { direction: ltr; }
+        .stMarkdown, .stText { text-align: left; }
+        [data-testid=&quot;stSidebar&quot;] { direction: ltr; }
+        &quot;&quot;&quot;
+    )
+    st.markdown(
+        f&quot;&quot;&quot;
+        &lt;style&gt;
+        {direction_css}
+        body, div, p, span {{
+            font-family: &quot;Tajawal&quot;,&quot;Cairo&quot;,&quot;Noto Kufi Arabic&quot;,&quot;Segoe UI&quot;,Arial,sans-serif;
+        }}
+        div.stButton&gt;button {{
+            background: {color};
+            color: white;
+            border-radius: 8px;
+            border: 0;
+            padding: 0.5rem 0.8rem;
+        }}
+        .highlight {{
+            background: rgba(0,0,0,0.03);
+            padding: 0.9rem 1.1rem;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }}
+        .plan-wrapper {{
+            background: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+        }}
+        .plan-wrapper h3 {{
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }}
+        .plan-line {{
+            line-height: 1.9;
+            margin: 0 0 8px 0;
+            font-size: 1.05rem;
+        }}
+        &lt;/style&gt;
+        &quot;&quot;&quot;,
+        unsafe_allow_html=True,
+    )
+
+
+def render_bold(text: str) -&gt; str:
+    esc = html.escape(text)
+    esc = re.sub(r&quot;\*\*(.+?)\*\*&quot;, r&quot;&lt;strong&gt;\1&lt;/strong&gt;&quot;, esc)
+    esc = re.sub(r&quot;__(.+?)__&quot;, r&quot;&lt;strong&gt;\1&lt;/strong&gt;&quot;, esc)
+    esc = re.sub(r&quot;(\d+(?:\.\d+)?\s*[٪%])&quot;, r&quot;&lt;strong&gt;\1&lt;/strong&gt;&quot;, esc)
+    for pat in [r&quot;\bdiscount\b&quot;, r&quot;\boffer\b&quot;, r&quot;\bfree\s+(?:delivery|shipping)\b&quot;, r&quot;\bvoucher\b&quot;, r&quot;\bcoupon\b&quot;, r&quot;\bpromo\b&quot;, r&quot;\bcode\b&quot;, r&quot;\bpoints?\b&quot;, r&quot;\bdouble\s+points?\b&quot;, r&quot;\bsave\b&quot;]:
+        esc = re.sub(pat, lambda m: f&quot;&lt;strong&gt;{m.group(0)}&lt;/strong&gt;&quot;, esc, flags=re.IGNORECASE)
+    for pat in [r&quot;خصم&quot;, r&quot;عرض&quot;, r&quot;كوبون&quot;, r&quot;قسيمة&quot;, r&quot;رمز&quot;, r&quot;نقاط&quot;, r&quot;مضاعفة\s+النقاط&quot;, r&quot;(?:توصيل|شحن)\s+مجاني&quot;, r&quot;مجاني&quot;]:
+        esc = re.sub(pat, lambda m: f&quot;&lt;strong&gt;{m.group(0)}&lt;/strong&gt;&quot;, esc)
+    return esc
+
+
+def render_plan_text(text: str, lang: str) -&gt; str:
+    lines = [ln.strip() for ln in text.splitlines()]
+    cleaned = [l for l in lines if l]
+    paras_html = [f&quot;&lt;p class=&#x27;plan-line&#x27;&gt;{render_bold(l)}&lt;/p&gt;&quot; for l in cleaned]
+    title = &quot;Plan - English text&quot; if lang == &quot;English&quot; else &quot;الخطة - نص عربي&quot;
+    return f&quot;&lt;div class=&#x27;plan-wrapper&#x27;&gt;&lt;h3&gt;{title}&lt;/h3&gt;{&#x27;&#x27;.join(paras_html)}&lt;/div&gt;&quot;
+
+
+# -----------------------------
+# Sidebar
+# -----------------------------
+def sidebar(lang: str):
+    st.header(&quot;Settings&quot; if lang == &quot;English&quot; else &quot;الإعدادات&quot;)
+
+    lang_choice = st.radio(&quot;Language / اللغة&quot;, [&quot;Arabic&quot;, &quot;English&quot;], index=0 if lang == &quot;Arabic&quot; else 1)
+    st.session_state.lang = lang_choice
+    lang = lang_choice
+
+    if lang == &quot;Arabic&quot;:
+        st.session_state.dialect = st.selectbox(&quot;اللهجة&quot;, [&quot;الفصحى&quot;, &quot;الخليجية&quot;], index=1)
+
+    if lang == &quot;English&quot;:
+        theme = st.selectbox(&quot;Theme color&quot;, [&quot;Green&quot;, &quot;Blue&quot;, &quot;Purple&quot;])
+        color_map = {&quot;Green&quot;: &quot;#22c55e&quot;, &quot;Blue&quot;: &quot;#3b82f6&quot;, &quot;Purple&quot;: &quot;#8b5cf6&quot;}
+    else:
+        theme = st.selectbox(&quot;لون الواجهة&quot;, [&quot;أخضر&quot;, &quot;أزرق&quot;, &quot;بنفسجي&quot;])
+        color_map = {&quot;أخضر&quot;: &quot;#22c55e&quot;, &quot;أزرق&quot;: &quot;#3b82ف6&quot;, &quot;بنفسجي&quot;: &quot;#8b5cf6&quot;}
+
+    style_primary(color_map.get(theme, &quot;#22c55e&quot;), lang)
+
+    st.session_state.model = st.text_input(&quot;Model ID&quot; if lang == &quot;English&quot; else &quot;معرف النموذج&quot;, value=st.session_state.model)
+
+    st.markdown(&quot;**Data source**&quot; if lang == &quot;English&quot; else &quot;**مصدر البيانات**&quot;)
+    uploaded = st.file_uploader(&quot;Upload CSV&quot; if lang == &quot;English&quot; else &quot;ارفع ملف CSV&quot;, type=[&quot;csv&quot;])
+    if uploaded is not None:
+        try:
+            up_df = pd.read_csv(uploaded)
+            err = validate_uploaded_df(up_df)
+            if err:
+                st.error(err)
+            else:
+                st.session_state[&quot;subscribers_df&quot;] = up_df
+                st.success(&quot;CSV uploaded successfully.&quot; if lang == &quot;English&quot; else &quot;تم تحميل بيانات CSV بنجاح.&quot;)
+        except Exception as e:
+            st.error((&quot;Failed to upload file: &quot; if lang == &quot;English&quot; else &quot;فشل تحميل الملف: &quot;) + str(e))
+
+    if st.button(&quot;Generate sample data&quot; if lang == &quot;English&quot; else &quot;إنشاء بيانات تجريبية&quot;):
+        st.session_state[&quot;subscribers_df&quot;] = generate_sample_subscribers(lang=lang)
+
+    if st.button(&quot;Clear data&quot; if lang == &quot;English&quot; else &quot;مسح البيانات&quot;):
+        st.session_state.pop(&quot;subscribers_df&quot;, None)
+        st.session_state.plan_text = &quot;&quot;
+        st.session_state.parsed_recs = None
+        st.success(&quot;Cleared.&quot; if lang == &quot;English&quot; else &quot;تم المسح.&quot;)
+
+
+# -----------------------------
+# Tabs
+# -----------------------------
+def tab_data_view(df: pd.DataFrame, lang: str):
+    st.subheader(&quot;Data preview&quot; if lang == &quot;English&quot; else &quot;معاينة البيانات&quot;)
+    st.dataframe(df, use_container_width=True)
+    with st.expander(&quot;Data quality tips&quot; if lang == &quot;English&quot; else &quot;نصائح جودة البيانات&quot;):
+        st.markdown(
+            &quot;- Ensure all required columns exist.\n- Boolean values like promo_used_recently must be 0 or 1.\n- Numeric columns should not contain text.&quot;
+            if lang == &quot;English&quot;
+            else &quot;- تأكد من وجود جميع الأعمدة المطلوبة.\n- القيم المنطقية كـ promo_used_recently يجب أن تكون 0 أو 1.\n- الأعمدة الرقمية بدون قيم نصية.&quot;
+        )
+
+
+def tab_scoring_view(df: pd.DataFrame, lang: str):
+    st.subheader(&quot;Churn score calculation&quot; if lang == &quot;English&quot; else &quot;حساب درجة الانسحاب&quot;)
+    try:
+        df[&quot;churn_score&quot;] = churn_score(df)
+    except Exception as e:
+        st.error(f&quot;Failed to calculate churn score: {e}&quot; if lang == &quot;English&quot; else f&quot;تعذر حساب درجة الانسحاب: {e}&quot;)
+        st.stop()
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric(&quot;Customers&quot; if lang == &quot;English&quot; else &quot;عدد العملاء&quot;, len(df))
+    c2.metric(&quot;Avg score&quot; if lang == &quot;English&quot; else &quot;متوسط الدرجة&quot;, f&quot;{df[&#x27;churn_score&#x27;].mean():.1f}%&quot;)
+    c3.metric(&quot;Max score&quot; if lang == &quot;English&quot; else &quot;أعلى درجة&quot;, f&quot;{df[&#x27;churn_score&#x27;].max():.1f}%&quot;)
+    c4.metric(&quot;Min score&quot; if lang == &quot;English&quot; else &quot;أدنى درجة&quot;, f&quot;{df[&#x27;churn_score&#x27;].min():.1f}%&quot;)
+
+    top_n = st.selectbox(&quot;Show top at-risk customers&quot; if lang == &quot;English&quot; else &quot;عرض الأعلى خطراً&quot;, [5, 10, 15, 20], index=0)
+
+    st.dataframe(
+        df.sort_values(&quot;churn_score&quot;, ascending=False).head(top_n),
+        use_container_width=True,
+        column_config={
+            &quot;churn_score&quot;: st.column_config.ProgressColumn(
+                &quot;Churn score&quot; if lang == &quot;English&quot; else &quot;درجة الانسحاب&quot;,
+                help=&quot;Relative score 0 to 100&quot; if lang == &quot;English&quot; else &quot;قيمة نسبية من 0 إلى 100&quot;,
+                min_value=0,
+                max_value=100,
+                format=&quot;%.1f%%&quot;,
+            )
+        },
+    )
+
+    with st.expander(&quot;How churn score is calculated&quot; if lang == &quot;English&quot; else &quot;كيف نحسب درجة الانسحاب&quot;):
+        st.markdown(
+            &quot;Composite score: longer since last order raises risk, frequent monthly orders and long lifetime reduce risk, and recent promo use reduces risk. Normalised to 0 to 100.&quot;
+            if lang == &quot;English&quot;
+            else &quot;نحسب درجة مركبة تعتمد على عدة عوامل: تأخر آخر طلب يرفع الخطر، تكرار الشراء وطول العمر يقللان الخطر، واستخدام عرض ترويجي مؤخراً يقلل الخطر. نطبع النتيجة إلى نطاق 0 حتى 100.&quot;
+        )
+
+
+def _emoji_for_lift(lift: str) -&gt; str:
+    s = str(lift or &quot;&quot;).strip().lower()
+    if s in [&quot;high&quot;, &quot;عالي&quot;, &quot;مرتفع&quot;]:
+        return &quot;🔥&quot;
+    if s in [&quot;medium&quot;, &quot;متوسط&quot;]:
+        return &quot;👍&quot;
+    if s in [&quot;low&quot;, &quot;منخفض&quot;]:
+        return &quot;🔔&quot;
+    return &quot;📈&quot;
+
+
+def tab_recommendations_view(df: pd.DataFrame, lang: str, dialect: str):
+    st.subheader(&quot;Generate recommendations&quot; if lang == &quot;English&quot; else &quot;توليد التوصيات&quot;)
+
+    df_scored = df.copy()
+    if &quot;churn_score&quot; not in df_scored.columns:
+        df_scored[&quot;churn_score&quot;] = churn_score(df_scored)
+
+    top_k = st.selectbox(&quot;Number of top at-risk customers&quot; if lang == &quot;English&quot; else &quot;عدد العملاء الأعلى خطراً&quot;, [5, 10, 15, 20], index=0)
+
+    selected = df_scored.sort_values(&quot;churn_score&quot;, ascending=False).head(top_k)
+    st.dataframe(
+        selected[[&quot;customer_id&quot;, &quot;last_order_days&quot;, &quot;orders_month&quot;, &quot;avg_spend&quot;, &quot;churn_score&quot;]],
+        use_container_width=True,
+        column_config={
+            &quot;churn_score&quot;: st.column_config.ProgressColumn(
+                &quot;Churn score&quot; if lang == &quot;English&quot; else &quot;درجة الانسحاب&quot;,
+                min_value=0,
+                max_value=100,
+                format=&quot;%.1f%%&quot;,
+            )
+        },
+    )
+
+    if st.button(&quot;Generate retention recommendations&quot; if lang == &quot;English&quot; else &quot;توليد توصيات الاحتفاظ&quot;):
+        top_records = selected.to_dict(orient=&quot;records&quot;)
+
+        if lang == &quot;Arabic&quot;:
+            sys_prompt = &quot;أنت مساعد تسويق يتحدث العربية ومخصص لدول الخليج. اكتب بالعربية برسالة ودية ومهنية.&quot;
+            user_prompt = (
+                f&quot;استخدم اللهجة: {dialect}. &quot;
+                &quot;1) اكتب فقرة ودية قصيرة بالعربية لكل عميل تشرح العرض المقترح مع رموز تعبيرية. &quot;
+                &quot;2) بعد الفقرات، أضف كتلة &lt;JSON&gt;...&lt;/JSON&gt; فيها مصفوفة كائنات بالحقل: &quot;
+                &quot;customer_id, action, message, expected_lift, rationale. &quot;
+                &quot;القيم بالعربية فقط، وطول message ≤ 120 حرفًا. &quot;
+                f&quot;العملاء: {json.dumps(top_records, ensure_ascii=False)}&quot;
+            )
+        else:
+            sys_prompt = &quot;You are a marketing assistant specialised for the UK market. Write in professional yet warm UK English.&quot;
+            user_prompt = (
+                &quot;1) For each customer, write a short friendly paragraph in English that explains the retention offer with emojis. &quot;
+                &quot;2) Then add a &lt;JSON&gt;...&lt;/JSON&gt; block containing an array of objects with keys: &quot;
+                &quot;customer_id, action, message, expected_lift, rationale. &quot;
+                &quot;Use UK English tone. Message length ≤ 120 characters. &quot;
+                f&quot;Customers: {json.dumps(top_records, ensure_ascii=False)}&quot;
+            )
+
+        with st.spinner(&quot;Generating plan and recommendations...&quot; if lang == &quot;English&quot; else &quot;جاري توليد الخطة والتوصيات&quot;):
+            try:
+                client = make_client()
+                completion = client.chat.completions.create(
+                    model=st.session_state.model,
+                    messages=[{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: sys_prompt}, {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_prompt}],
+                )
+                full_text = extract_text_from_completion(completion)
+                natural, json_text = split_natural_and_json(full_text)
+
+                if natural:
+                    st.session_state.plan_text = natural
+
+                parsed = None
+                if json_text:
+                    try:
+                        parsed = json.loads(json_text)
+                    except Exception:
+                        parsed = None
+                        st.warning(&quot;Could not parse JSON.&quot; if lang == &quot;English&quot; else &quot;تعذر قراءة JSON.&quot;)
+                st.session_state.parsed_recs = parsed
+                st.success(&quot;Generated successfully.&quot; if lang == &quot;English&quot; else &quot;تم التوليد بنجاح.&quot;)
+            except Exception as e:
+                st.error((&quot;Failed: &quot; if lang == &quot;English&quot; else &quot;فشل: &quot;) + str(e))
+
+    if st.session_state.plan_text:
+        st.markdown(render_plan_text(st.session_state.plan_text, lang), unsafe_allow_html=True)
+
+    if isinstance(st.session_state.parsed_recs, list):
+        st.markdown(&quot;### Recommendations&quot; if lang == &quot;English&quot; else &quot;### التوصيات&quot;)
+        for rec in st.session_state.parsed_recs:
+            cid = rec.get(&quot;customer_id&quot;, &quot;-&quot;)
+            action = rec.get(&quot;action&quot;, &quot;&quot;)
+            message_raw = rec.get(&quot;message&quot;, &quot;&quot;)
+            lift = rec.get(&quot;expected_lift&quot;, &quot;&quot;)
+            rationale = rec.get(&quot;rationale&quot;, &quot;&quot;)
+            emoji = _emoji_for_lift(lift)
+
+            with st.expander(f&quot;{emoji} {cid} - {action}&quot;):
+                st.markdown((&quot;**Message:** &quot; if lang == &quot;English&quot; else &quot;**الرسالة:** &quot;) + render_bold(message_raw), unsafe_allow_html=True)
+                st.markdown((&quot;**Expected impact:** &quot; if lang == &quot;English&quot; else &quot;**التأثير المتوقع:** &quot;) + f&quot;**{html.escape(str(lift))}**&quot;)
+                if rationale:
+                    st.markdown((&quot;**Rationale:** &quot; if lang == &quot;English&quot; else &quot;**السبب:** &quot;) + html.escape(str(rationale)))
+
+
+# -----------------------------
+# App
+# -----------------------------
+def app():
+    st.set_page_config(page_title=&quot;Subscription Growth Agent&quot;, layout=&quot;wide&quot;, initial_sidebar_state=&quot;expanded&quot;)
+    init_state()
+
+    with st.sidebar:
+        sidebar(st.session_state.lang)
+
+    if st.session_state.lang == &quot;English&quot;:
+        st.title(&quot;🌍 Subscription Growth Agent - Calo&quot;)
+        st.markdown(&quot;🤖 Helps identify at-risk customers and generate retention recommendations.&quot;)
+    else:
+        st.title(&quot;🌍 وكيل نمو الاشتراكات - Calo&quot;)
+        st.markdown(&quot;🤖 يساعد هذا التطبيق على التعرف على العملاء ذوي خطر الانسحاب وتوليد توصيات احتفاظ باللغة العربية.&quot;)
+
+    if &quot;subscribers_df&quot; not in st.session_state:
+        st.info(&quot;No data yet. Upload a CSV or generate sample data from the sidebar.&quot; if st.session_state.lang == &quot;English&quot; else &quot;لا توجد بيانات بعد. ارفع CSV أو أنشئ بيانات تجريبية من الشريط الجانبي.&quot;)
+        st.stop()
+
+    df = st.session_state[&quot;subscribers_df&quot;]
+    tabs = ([&quot;Data&quot;, &quot;Scoring&quot;, &quot;Recommendations&quot;] if st.session_state.lang == &quot;English&quot; else [&quot;البيانات&quot;, &quot;الحساب&quot;, &quot;التوصيات&quot;])
+    tab_data, tab_scoring, tab_reco = st.tabs(tabs)
+
+    with tab_data:
+        tab_data_view(df, st.session_state.lang)
+    with tab_scoring:
+        tab_scoring_view(df, st.session_state.lang)
+    with tab_reco:
+        tab_recommendations_view(df, st.session_state.lang, st.session_state.dialect if st.session_state.lang == &quot;Arabic&quot; else &quot;&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    try:
+        app()
+    except EnvironmentError as e:
+        st.error(str(e))
+    except Exception as e:
+        st.exception(e)
+</pre>
+
+<h2>Alignment to Calo AI Specialist Role</h2>
+<pre># Alignment to Calo AI Specialist Role
+
+- Agent development and prompt engineering - stable prompts produce both human plan and JSON payloads.
+- POC prototyping - Streamlit app demonstrates end to end value in under 60 seconds.
+- Data preparation - synthetic generator ensures safe demos with realistic fields.
+- Model flexibility - HF Router keeps the app model agnostic for future swaps or fine tuned models.
+- Knowledge sharing - PRD and demo script included for team handoff and lunch and learn sessions.
+</pre>
+
+<h2>Setup and Run</h2>
+<pre># Setup and Run
+
+1. Install requirements:
+   - streamlit, openai, pandas, numpy
+2. Set environment variable:
+   - export HF_TOKEN=&quot;hf_xxx&quot;
+3. Run:
+   - streamlit run app.py
+4. Optional:
+   - Upload CSV with required columns or use sample data.
+</pre>
+</article>
+</body>
+</html>
