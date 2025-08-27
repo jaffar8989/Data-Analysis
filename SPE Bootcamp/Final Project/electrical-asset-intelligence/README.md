@@ -98,6 +98,16 @@ electrical-asset-intelligence/
 └── ── ── ── ── ── ── ── ── ── ── ── ── ── 
 ```
 
+## Notebook suite and review guidance
+
+The project includes a full notebook suite. These notebooks are the source of truth for metrics, figures, and tuned hyperparameters. If any value in the README or report differs, please rely on the notebooks.
+
+- `notebooks/01_data_exploration.ipynb` - exploratory analysis, statistics, and sanity checks  
+- `notebooks/02_anomaly_detection.ipynb` - LSTM autoencoder training and anomaly scoring  
+- `notebooks/03_hyperparameter_tuning.ipynb` - Bayesian optimization for classifiers  
+- `notebooks/04_reinforcement_learning_scheduling.ipynb` - Q-learning maintenance scheduling  
+- `notebooks/05_prescriptive_engine_demo.ipynb` - end to end prescriptive workflow
+
 ## 🚀 Usage
 
 ### Data Preprocessing
